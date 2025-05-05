@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "vm-browserify": "^1.1.2"
+  }
+}

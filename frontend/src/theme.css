@@ -1,0 +1,142 @@
+/* Base theme variables */
+:root {
+  /* Light theme colors (default) */
+  --bg-color: #f8f9fa;
+  --text-color: #333;
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --primary-color: #0366d6;
+  --primary-hover: #0055b3;
+  --secondary-bg: #f5f5f5;
+  --border-color: #ddd;
+  --code-bg: #e0e0e0;
+  --error-color: #e53935;
+  --button-text: white;
+  --loading-overlay: rgba(255, 255, 255, 0.8);
+  --squares-border: rgba(0, 0, 0, 0.3);
+  --squares-bg: rgba(213, 213, 213, 0.9);
+  --squares-hover: rgba(200, 200, 255, 0.8);
+  --focus-color: rgba(3, 102, 214, 0.2);
+  --scrollbar-track: #f1f1f1;
+  --scrollbar-thumb: #c1c1c1;
+  --scrollbar-hover: #a8a8a8;
+  
+  /* Code syntax highlighting */
+  --code-block-bg: #f6f8fa;
+  --code-text: #24292e;
+  --code-comment: #6a9955;
+  --code-string: #ce9178;
+  --code-keyword: #569cd6;
+  --code-function: #dcdcaa;
+  --code-number: #b5cea8;
+  --code-tag: #569cd6;
+  --code-attr: #9cdcfe;
+  --code-highlight: rgba(0, 0, 0, 0.05);
+  
+  /* Project card colors */
+  --card-title: #333;
+  --card-description: #555;
+  --card-stat-value: #333;
+  --card-stat-label: #777;
+  --card-border: rgba(0, 0, 0, 0.1);
+}
+
+/* Dark theme variables */
+.dark-theme {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --card-bg: rgba(30, 30, 30, 0.9);
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --primary-color: #58a6ff;
+  --primary-hover: #79b8ff;
+  --secondary-bg: #2d2d2d;
+  --border-color: #444;
+  --code-bg: #333;
+  --error-color: #f44336;
+  --button-text: white;
+  --loading-overlay: rgba(18, 18, 18, 0.8);
+  --squares-border: rgba(255, 255, 255, 0.6);
+  --squares-bg: rgba(30, 30, 30, 0.9);
+  --squares-hover: rgba(100, 100, 200, 0.8);
+  --focus-color: rgba(88, 166, 255, 0.2);
+  --scrollbar-track: #2d2d2d;
+  --scrollbar-thumb: #666;
+  --scrollbar-hover: #888;
+  
+  /* Code syntax highlighting */
+  --code-block-bg: #1e1e1e;
+  --code-text: #d4d4d4;
+  --code-comment: #6a9955;
+  --code-string: #ce9178;
+  --code-keyword: #569cd6;
+  --code-function: #dcdcaa;
+  --code-number: #b5cea8;
+  --code-tag: #569cd6;
+  --code-attr: #9cdcfe;
+  --code-highlight: rgba(255, 255, 255, 0.1);
+  
+  /* Project card colors */
+  --card-title: #e0e0e0;
+  --card-description: #c0c0c0;
+  --card-stat-value: #e0e0e0;
+  --card-stat-label: #a0a0a0;
+  --card-border: rgba(255, 255, 255, 0.1);
+}
+
+/* Light theme - explicit class */
+.light-theme {
+  /* Same as root values */
+  --bg-color: #f8f9fa;
+  --text-color: #333;
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --primary-color: #0366d6;
+  --primary-hover: #0055b3;
+  --secondary-bg: #f5f5f5;
+  --border-color: #ddd;
+  --code-bg: #e0e0e0;
+  --error-color: #e53935;
+  --button-text: white;
+  --loading-overlay: rgba(255, 255, 255, 0.8);
+  --squares-border: rgba(0, 0, 0, 0.3);
+  --squares-bg: rgba(213, 213, 213, 0.9);
+  --squares-hover: rgba(200, 200, 255, 0.8);
+  --focus-color: rgba(3, 102, 214, 0.2);
+  --scrollbar-track: #f1f1f1;
+  --scrollbar-thumb: #c1c1c1;
+  --scrollbar-hover: #a8a8a8;
+  
+  /* Code syntax highlighting */
+  --code-block-bg: #f6f8fa;
+  --code-text: #24292e;
+  --code-comment: #6a9955;
+  --code-string: #ce9178;
+  --code-keyword: #569cd6;
+  --code-function: #dcdcaa;
+  --code-number: #b5cea8;
+  --code-tag: #569cd6;
+  --code-attr: #9cdcfe;
+  --code-highlight: rgba(0, 0, 0, 0.05);
+  
+  /* Project card colors */
+  --card-title: #333;
+  --card-description: #555;
+  --card-stat-value: #333;
+  --card-stat-label: #777;
+  --card-border: rgba(0, 0, 0, 0.1);
+}
+
+/* Apply theme variables to elements */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Theme transition for smooth theme switching */
+*, *::before, *::after {
+  transition: background-color 0.3s ease, 
+              color 0.3s ease, 
+              border-color 0.3s ease,
+              box-shadow 0.3s ease;
+} 

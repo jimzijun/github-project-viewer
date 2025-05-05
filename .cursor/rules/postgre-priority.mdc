@@ -1,0 +1,6 @@
+---
+description: If asking to do a db related job, use postgres mcp first
+globs: 
+alwaysApply: false
+---
+If asking to do a db related task, try use postgres mcp first instead of writing scripts
