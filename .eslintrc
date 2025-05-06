@@ -1,0 +1,21 @@
+// {
+//   "extends": [
+//     "react-app",
+//     "react-app/jest"
+//   ],
+//   "rules": {
+//     "react/function-component-definition": [
+//       "error",
+//       {
+//         "namedComponents": "arrow-function",
+//         "unnamedComponents": "arrow-function"
+//       }
+//     ],
+//     "no-inner-declarations": "error",
+//     "react/jsx-no-constructed-context-values": "error",
+//     "react-hooks/exhaustive-deps": "warn",
+//     "react-hooks/rules-of-hooks": "error",
+//     // Use the official React ESLint rule to prevent component definitions inside other components
+//     "react/no-unstable-nested-components": ["error", { "allowAsProps": false }]
+//   }
+// } 
