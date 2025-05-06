@@ -147,6 +147,19 @@ function mapGitHubRepoToProject(repo: GitHubRepo): Project {
 // Create a map to track currently loading README promises to avoid duplicate requests
 const pendingReadmeRequests = new Map<string, Promise<{readme: string}>>();
 
+// Helper function to properly decode base64 to UTF-8 string
+function decodeBase64ToString(base64: string): string {
+  // First decode base64 to binary string
+  const binaryString = atob(base64);
+  // Convert binary string to Uint8Array
+  const bytes = new Uint8Array(binaryString.length);
+  for (let i = 0; i < binaryString.length; i++) {
+    bytes[i] = binaryString.charCodeAt(i);
+  }
+  // Use TextDecoder to convert to UTF-8 string
+  return new TextDecoder('utf-8').decode(bytes);
+}
+
 // Projects API
 export const projectsApi = {
   // Get all projects
@@ -293,7 +306,7 @@ export const projectsApi = {
         if (readmeResponse.content && readmeResponse.encoding === 'base64') {
           // Decode base64 content in chunks to prevent memory issues with large READMEs
           const chunkedContent = readmeResponse.content.match(/.{1,5000}/g) || [];
-          readme = chunkedContent.map(chunk => atob(chunk)).join('');
+          readme = chunkedContent.map(chunk => decodeBase64ToString(chunk)).join('');
         }
         
         const result = { readme };
