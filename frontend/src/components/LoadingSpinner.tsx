@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { useTheme } from '../utils/ThemeContext';
 
 interface LoadingSpinnerProps {
   size?: number;
@@ -41,7 +40,6 @@ const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
   color,
   className
 }) => {
-  const { effectiveTheme } = useTheme();
   // Use the provided color or fall back to primary-color from theme
   const spinnerColor = color || 'var(--primary-color)';
   

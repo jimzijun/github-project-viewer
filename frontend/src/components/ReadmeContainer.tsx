@@ -6,7 +6,6 @@ import remarkGfm from 'remark-gfm';
 import remarkEmoji from 'remark-emoji';
 import rehypeRaw from 'rehype-raw';
 import rehypePrism from 'rehype-prism-plus';
-import { useTheme } from '../utils/ThemeContext';
 import 'github-markdown-css/github-markdown.css';
 import 'prismjs/themes/prism-tomorrow.css'; // Import PrismJS theme
 
@@ -312,10 +311,7 @@ const ReadmeContainer: React.FC<ReadmeContainerProps> = ({
   toggleCardVisibility,
   isCardVisible
 }) => {
-  const { effectiveTheme } = useTheme();
-  const [animationSpeed, setAnimationSpeed] = useState(0.5);
   const [showDragTip, setShowDragTip] = useState(false);
-  const contentRef = useRef<HTMLDivElement>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
   
   // Use simpler approach: only protect semicolons in patterns like TL;DR
@@ -331,20 +327,9 @@ const ReadmeContainer: React.FC<ReadmeContainerProps> = ({
   // Listen for keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
-        // Only set speed, no direction
-        setAnimationSpeed(1);
-      } else if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
-        // Only set speed, no direction
-        setAnimationSpeed(0.7);
-      }
     };
     
     const handleKeyUp = () => {
-      // Slow down animation after key release
-      setTimeout(() => {
-        setAnimationSpeed(0.5);
-      }, 300);
     };
     
     window.addEventListener('keydown', handleKeyDown);

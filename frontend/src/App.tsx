@@ -4,16 +4,12 @@ import ProjectContainer from './components/ProjectContainer';
 import { projectsApi } from './services/api';
 import RepositoryFilters from './components/RepositoryFilters';
 import LoadingSpinner from './components/LoadingSpinner';
-import { useTheme } from './utils/ThemeContext';
 import './App.css';
 
 // Fallback sample data in case API fails
 const sampleProjects: Project[] = [];
 
 function App() {
-  // Get theme information
-  const { effectiveTheme } = useTheme();
-  
   // State for projects and current index
   const [projects, setProjects] = useState<Project[]>([]);
   const [currentProjectIndex, setCurrentProjectIndex] = useState(0);

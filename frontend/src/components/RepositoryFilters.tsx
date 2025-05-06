@@ -74,21 +74,6 @@ const Button = styled.button<{ isLoading?: boolean }>`
   }
 `;
 
-const Input = styled.input`
-  padding: 8px 10px;
-  border-radius: 4px;
-  border: 1px solid var(--border-color);
-  background: var(--card-bg);
-  color: var(--text-color);
-  font-size: 14px;
-  outline: none;
-  
-  &:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 2px var(--focus-color);
-  }
-`;
-
 // Common programming languages
 const popularLanguages = [
   '',
