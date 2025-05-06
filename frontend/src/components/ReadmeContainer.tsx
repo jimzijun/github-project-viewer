@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ReadmeContainerProps } from '../types';
 import styled from '@emotion/styled';
-import { updateSquaresProps } from './Squares';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import remarkEmoji from 'remark-emoji';
@@ -9,7 +8,7 @@ import rehypeRaw from 'rehype-raw';
 import rehypePrism from 'rehype-prism-plus';
 import { useTheme } from '../utils/ThemeContext';
 import 'github-markdown-css/github-markdown.css';
-import 'prismjs/themes/prism-tomorrow.css'; // Import a PrismJS theme
+import 'prismjs/themes/prism-tomorrow.css'; // Import PrismJS theme
 
 const MainContainer = styled.div`
   position: relative;
@@ -335,11 +334,9 @@ const ReadmeContainer: React.FC<ReadmeContainerProps> = ({
       if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
         // Only set speed, no direction
         setAnimationSpeed(1);
-        updateSquaresProps({ speed: 1 });
       } else if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
         // Only set speed, no direction
         setAnimationSpeed(0.7);
-        updateSquaresProps({ speed: 0.7 });
       }
     };
     
@@ -347,7 +344,6 @@ const ReadmeContainer: React.FC<ReadmeContainerProps> = ({
       // Slow down animation after key release
       setTimeout(() => {
         setAnimationSpeed(0.5);
-        updateSquaresProps({ speed: 0.5 });
       }, 300);
     };
     

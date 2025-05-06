@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Project } from './types/project';
 import ProjectContainer from './components/ProjectContainer';
-import { SingletonSquares, updateSquaresProps } from './components/Squares';
 import { projectsApi } from './services/api';
 import RepositoryFilters from './components/RepositoryFilters';
 import LoadingSpinner from './components/LoadingSpinner';
@@ -92,21 +91,6 @@ function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [language, timePeriod]);
   
-  // Update squares with theme-aware settings
-  useEffect(() => {
-    // Get CSS variables for squares
-    const squaresBorder = getComputedStyle(document.documentElement).getPropertyValue('--squares-border').trim();
-    const squaresBackground = getComputedStyle(document.documentElement).getPropertyValue('--squares-bg').trim();
-    
-    updateSquaresProps({
-      speed: 0.5,
-      squareSize: 40,
-      borderColor: squaresBorder,
-      squareBackground: squaresBackground,
-      opacity: 0.5
-    });
-  }, []);
-  
   const handlePrevious = () => {
     setCurrentProjectIndex(prevIndex => 
       prevIndex > 0 ? prevIndex - 1 : projects.length - 1
@@ -125,8 +109,6 @@ function App() {
   
   return (
     <div className="App">
-      <SingletonSquares />
-      
       {/* Repository filters */}
       <RepositoryFilters 
         language={language}
